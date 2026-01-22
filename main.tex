@@ -1,0 +1,147 @@
+\documentclass[12pt, a4paper]{report}
+
+\usepackage[spanish, es-tabla]{babel}
+
+\usepackage{graphicx} % Required for inserting images.
+\usepackage[hidelinks]{hyperref} %Required for make "Contents" clickable.
+\usepackage{bookmark} %Improves "hyperref" package.
+\usepackage{xcolor} %Required to change the font color.
+\usepackage{listings} %Required to insert code.
+\usepackage{fontspec} %Required to change the font.
+\usepackage[table]{xcolor} %Required to have coloured cells on a table.
+\usepackage{amssymb} %Required to use \leqslant and other symbols.
+\usepackage{amsmath} %Required to use \dotsb.
+
+\usepackage{geometry} %Para ajustar márgenes
+\usepackage{csquotes} %Para citas en español
+
+% ========== Líderes de puntos en el índice ==========
+\usepackage{tocloft}
+
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+% FIN ========== Líderes de puntos en el índice ==========
+
+% ========== Bibliografía ==========
+\usepackage[style=authoryear, backend=biber, language=spanish]{biblatex}
+\addbibresource{bibliografia.bib} % Archivo .bib con tus referencias
+% FIN ========== Bibliografía ==========
+
+
+\usepackage{anyfontsize} %Para tamaño de fuente personalizado
+
+% Configuración de márgenes
+\geometry{
+    left=2.5cm,
+    right=2.5cm,
+    top=2.5cm,
+    bottom=2.5cm
+}
+
+%"fontspec" package settings
+\setmainfont{Latin Modern Roman}
+\setmonofont{Fira Mono}
+
+%"listings" package settings
+\lstset{
+  language=Swift,
+  breaklines=true,
+  breakatwhitespace=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+  numbers=left,
+  numberstyle=\tiny,
+  stepnumber=1,
+  numbersep=8pt,
+  frame=single,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\color{violet}\bfseries,
+  commentstyle=\scriptsize\color{gray}\itshape,
+  stringstyle=\color{red},
+}
+
+% ========== Variables globales ==========
+\newcommand{\universidad}{Universidad de Cádiz}
+\newcommand{\centro}{Facultad de Ciencias - Escuela Superior de Ingeniería}
+\title{Plantilla de documento corto}
+\newcommand{\titulo}{Plantilla de documento corto}
+\newcommand{\subtitulo}{Plantilla de \LaTeX para documentos académicos universitarios cortos}
+\newcommand{\tipodoc}{Informe de prácticas}
+\newcommand{\asignatura}{Sistemas Digitales}
+\author{Alfonso Francisco Gil González}
+\newcommand{\autor}{Alfonso Francisco Gil González}
+\newcommand{\tutora}{Profesor: Diego Sales Lérida}
+\newcommand{\lugar}{Puerto Real}
+\newcommand{\fecha}{20 de enero de 2026}
+\date{Enero de 2026}
+% FIN ========== Variables globales ==========
+
+% ========== Encabezados y pies de páginas ==========
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% Limpia los estilos por defecto
+\fancyhf{}
+
+% Configura el encabezado
+\fancyhead[L]{\small \autor}
+\fancyhead[R]{\small \titulo}
+
+% Configura el pie de página
+\fancyfoot[C]{\small \thepage}
+
+\renewcommand{\headrulewidth}{0pt} % Elimina la línea del encabezado
+% FIN ========== Encabezados y pies de páginas ==========
+
+% ========== Redefinir los tamaños de fuente estándar ==========
+\renewcommand{\tiny}{\fontsize{8pt}{9.6pt}\selectfont} % 8pt, interlineado 9.6pt
+\renewcommand{\scriptsize}{\fontsize{12pt}{14.4pt}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{9pt}{11pt}\selectfont}
+\renewcommand{\small}{\fontsize{10pt}{12pt}\selectfont}
+\renewcommand{\normalsize}{\fontsize{12pt}{14.4pt}\selectfont}
+\renewcommand{\large}{\fontsize{14pt}{16.8pt}\selectfont}
+\renewcommand{\Large}{\fontsize{16pt}{19.2pt}\selectfont}
+\renewcommand{\LARGE}{\fontsize{20pt}{24pt}\selectfont}
+\renewcommand{\huge}{\fontsize{22pt}{26.4pt}\selectfont}
+\renewcommand{\Huge}{\fontsize{24pt}{28.8pt}\selectfont}
+% FIN ========== Redefinir los tamaños de fuente estándar ==========
+
+
+\begin{document}
+
+% Front matter
+\pagenumbering{roman}
+\setcounter{page}{0}
+
+\input{front_matter/title_page}
+
+\input{front_matter/abstract}
+
+\tableofcontents
+
+\clearpage
+
+
+% Main matter
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{main_matter/intro}
+
+\input{main_matter/cuerpo/cap_1}
+
+\input{main_matter/cuerpo/cap_2}
+
+\input{main_matter/conclu}
+
+
+% Back matter
+\input{back_matter/biblio}
+
+\input{back_matter/anexos/anexo_1}
+
+\input{back_matter/anexos/anexo_2}
+
+
+\end{document}
