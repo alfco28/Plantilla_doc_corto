@@ -2,9 +2,7 @@
 
 \usepackage[spanish, es-tabla]{babel}
 
-\usepackage{graphicx} % Required for inserting images.
-\usepackage[hidelinks]{hyperref} %Required for make "Contents" clickable.
-\usepackage{bookmark} %Improves "hyperref" package.
+\usepackage{graphicx} %Required for inserting images.
 \usepackage{xcolor} %Required to change the font color.
 \usepackage{listings} %Required to insert code.
 \usepackage{fontspec} %Required to change the font.
@@ -25,7 +23,7 @@
 
 % ========== Bibliografía ==========
 \usepackage[style=authoryear, backend=biber, language=spanish]{biblatex}
-\addbibresource{bibliografia.bib} % Archivo .bib con tus referencias
+\addbibresource{back_matter/bibliografia.bib}
 % FIN ========== Bibliografía ==========
 
 
@@ -112,6 +110,9 @@
     \fancyfoot[C]{\small \thepage}
 }
 % FIN ========== Encabezados y pies de páginas ==========
+
+\usepackage[hidelinks]{hyperref} %Required for make "Contents" clickable.
+\usepackage{bookmark} %Improves "hyperref" package.
 
 
 \begin{document}
