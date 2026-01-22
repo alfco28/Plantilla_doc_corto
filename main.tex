@@ -77,6 +77,19 @@
 \date{Enero de 2026}
 % FIN ========== Variables globales ==========
 
+% ========== Redefinir los tamaños de fuente estándar ==========
+\renewcommand{\tiny}{\fontsize{8pt}{9.6pt}\selectfont} % 8pt, interlineado 9.6pt
+\renewcommand{\scriptsize}{\fontsize{12pt}{14.4pt}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{10pt}{12pt}\selectfont}
+\renewcommand{\small}{\fontsize{10pt}{12pt}\selectfont}
+\renewcommand{\normalsize}{\fontsize{12pt}{14.4pt}\selectfont}
+\renewcommand{\large}{\fontsize{14pt}{16.8pt}\selectfont}
+\renewcommand{\Large}{\fontsize{16pt}{19.2pt}\selectfont}
+\renewcommand{\LARGE}{\fontsize{20pt}{24pt}\selectfont}
+\renewcommand{\huge}{\fontsize{22pt}{26.4pt}\selectfont}
+\renewcommand{\Huge}{\fontsize{24pt}{28.8pt}\selectfont}
+% FIN ========== Redefinir los tamaños de fuente estándar ==========
+
 % ========== Encabezados y pies de páginas ==========
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -92,20 +105,13 @@
 \fancyfoot[C]{\small \thepage}
 
 \renewcommand{\headrulewidth}{0pt} % Elimina la línea del encabezado
-% FIN ========== Encabezados y pies de páginas ==========
 
-% ========== Redefinir los tamaños de fuente estándar ==========
-\renewcommand{\tiny}{\fontsize{8pt}{9.6pt}\selectfont} % 8pt, interlineado 9.6pt
-\renewcommand{\scriptsize}{\fontsize{12pt}{14.4pt}\selectfont}
-\renewcommand{\footnotesize}{\fontsize{9pt}{11pt}\selectfont}
-\renewcommand{\small}{\fontsize{10pt}{12pt}\selectfont}
-\renewcommand{\normalsize}{\fontsize{12pt}{14.4pt}\selectfont}
-\renewcommand{\large}{\fontsize{14pt}{16.8pt}\selectfont}
-\renewcommand{\Large}{\fontsize{16pt}{19.2pt}\selectfont}
-\renewcommand{\LARGE}{\fontsize{20pt}{24pt}\selectfont}
-\renewcommand{\huge}{\fontsize{22pt}{26.4pt}\selectfont}
-\renewcommand{\Huge}{\fontsize{24pt}{28.8pt}\selectfont}
-% FIN ========== Redefinir los tamaños de fuente estándar ==========
+% Pies de página del page style plain, usado al iniciar un capítulo
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[C]{\small \thepage}
+}
+% FIN ========== Encabezados y pies de páginas ==========
 
 
 \begin{document}
