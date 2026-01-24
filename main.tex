@@ -90,6 +90,7 @@
   stepnumber=1,
   numbersep=8pt,
   frame=single,
+  lineskip=2pt,
   showstringspaces=false,
   basicstyle=\footnotesize\ttfamily,
   keywordstyle=\color{violet}\bfseries,
@@ -98,19 +99,51 @@
   commentstyle=\scriptsize\color{gray}\itshape,
   stringstyle=\color{red},
   identifierstyle=\color{teal},
+  directivestyle=\color{green},
+  backgroundcolor=\color{gray!5},
+  rulecolor=\color{black},
+  tabsize=4,
 }
-\renewcommand{\lstlistingname}{Listado}
+\lstdefinestyle{python}{
+  language=Python,
+  breaklines=true,
+  breakatwhitespace=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+  numbers=left,
+  numberstyle=\tiny\ttfamily,
+  stepnumber=1,
+  numbersep=8pt,
+  frame=single,
+  lineskip=2pt,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\color{violet}\bfseries,
+  keywordstyle=[2]\color{violet}\bfseries,
+  keywordstyle=[3]\color{violet}\bfseries,
+  commentstyle=\scriptsize\color{gray}\itshape,
+  stringstyle=\color{red},
+  identifierstyle=\color{teal},
+  directivestyle=\color{green},
+  backgroundcolor=\color{gray!5},
+  rulecolor=\color{black},
+  tabsize=4,
+}
+\renewcommand{\lstlistingname}{Fragmento de código}
 
 % ========== Variables globales ==========
+\title{Plantilla de documento corto}
+\author{Alfonso Francisco Gil González}
 \newcommand{\universidad}{Universidad de Cádiz}
 \newcommand{\centro}{Facultad de Ciencias - Escuela Superior de Ingeniería}
-\title{Plantilla de documento corto}
-\newcommand{\titulo}{Plantilla de documento corto}
+
+\makeatletter
+\newcommand{\titulo}{\@title}
+\newcommand{\autor}{\@author}
+\makeatother
+
 \newcommand{\subtitulo}{Plantilla de \LaTeX para documentos académicos universitarios cortos}
 \newcommand{\tipodoc}{Informe de prácticas}
 \newcommand{\asignatura}{Sistemas Digitales}
-\author{Alfonso Francisco Gil González}
-\newcommand{\autor}{Alfonso Francisco Gil González}
 \newcommand{\tutora}{Profesor: Diego Sales Lérida}
 \newcommand{\lugar}{Puerto Real}
 \newcommand{\fecha}{20 de enero de 2026}
@@ -186,8 +219,8 @@
 \Crefname{problema}{Problema}{Problemas}
 \crefname{algorithm}{algoritmo}{algoritmos}
 \Crefname{algorithm}{Algoritmo}{Algoritmos}
-\crefname{listing}{listado}{listados}
-\Crefname{listing}{Listado}{Listados}
+\crefname{listing}{fragmento de código}{fragmentos de código}
+\Crefname{listing}{Fragmento de código}{Fragmentos de código}
 \crefname{equation}{ecuación}{ecuaciones}
 \Crefname{equation}{Ecuación}{Ecuaciones}
 % FIN========== Configuración "cleveref" ==========
