@@ -1,14 +1,52 @@
-\documentclass[12pt, a4paper]{report}
+\documentclass[12pt, a4paper]{article}
 
+\usepackage{fontspec} %Required to change the font.
 \usepackage[spanish, es-tabla]{babel}
 
 \usepackage{graphicx} %Required to insert images.
-\usepackage{xcolor} %Required to change the font color.
 \usepackage{listings} %Required to insert code.
-\usepackage{fontspec} %Required to change the font.
 \usepackage[table]{xcolor} %Required to have coloured cells on a table.
-\usepackage{amssymb} %Required to use \leqslant and other symbols.
-\usepackage{amsmath} %Required to use \dotsb.
+\usepackage{amssymb} %Para más símbolos de matemáticas.
+\usepackage{amsmath} %Para más símbolos de matemáticas.
+\usepackage{amsthm} %Para entornos de teoremas, demostraciones y demás.
+
+% ========== Configuración entornos de teoremas y demás ==========
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{lema}[teorema]{Lema}
+\newtheorem{proposicion}[teorema]{Proposición}
+\newtheorem{corolario}[teorema]{Corolario}
+
+\newtheorem{propiedad}[teorema]{Propiedad}
+\newtheorem{axioma}[teorema]{Axioma}
+\newtheorem{criterio}[teorema]{Criterio}
+
+\newtheorem{definicion}{Definición}[section]
+
+\newtheorem{ejemplo}{Ejemplo}[section]
+\newtheorem{observacion}{Observación}[section]
+\newtheorem{nota}{Nota}[section]
+\newtheorem{conjetura}{Conjetura}[section]
+\newtheorem{problema}{Problema}[section]
+
+% FIN========== Configuración entornos de teoremas y demás ==========
+
+% ========== Entornos para algoritmos en pseudocódigo ==========
+\usepackage{algorithm} % Para el entorno "algorithm"
+\usepackage{algpseudocode} % Para la sintaxis del pseudocódigo
+
+% Personalización para castellano
+\floatname{algorithm}{Algoritmo} % Cambia "Algorithm" por "Algoritmo"
+\renewcommand{\algorithmicrequire}{\textbf{Requerir:}}
+\renewcommand{\algorithmicensure}{\textbf{Asegurar:}}
+\renewcommand{\algorithmicwhile}{\textbf{mientras}}
+\renewcommand{\algorithmicif}{\textbf{si}}
+\renewcommand{\algorithmicthen}{\textbf{entonces}}
+\renewcommand{\algorithmicelse}{\textbf{si no}}
+\renewcommand{\algorithmicfor}{\textbf{para}}
+\renewcommand{\algorithmicdo}{\textbf{hacer}}
+\renewcommand{\algorithmicend}{\textbf{fin}}
+\renewcommand{\algorithmicreturn}{\textbf{devolver}}
+% FIN========== Entornos para algoritmos en pseudocódigo ==========
 
 \usepackage{geometry} %Para ajustar márgenes
 \usepackage{csquotes} %Para citas en español
@@ -16,7 +54,7 @@
 % ========== Líderes de puntos en el índice ==========
 \usepackage{tocloft}
 
-\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+%\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
 % FIN ========== Líderes de puntos en el índice ==========
@@ -48,16 +86,20 @@
   breakatwhitespace=true,
   postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
   numbers=left,
-  numberstyle=\tiny,
+  numberstyle=\tiny\ttfamily,
   stepnumber=1,
   numbersep=8pt,
   frame=single,
   showstringspaces=false,
   basicstyle=\footnotesize\ttfamily,
   keywordstyle=\color{violet}\bfseries,
+  keywordstyle=[2]\color{violet}\bfseries,
+  keywordstyle=[3]\color{violet}\bfseries,
   commentstyle=\scriptsize\color{gray}\itshape,
   stringstyle=\color{red},
+  identifierstyle=\color{teal},
 }
+\renewcommand{\lstlistingname}{Listado}
 
 % ========== Variables globales ==========
 \newcommand{\universidad}{Universidad de Cádiz}
@@ -113,6 +155,42 @@
 
 \usepackage[hidelinks]{hyperref} %Required to make "Contents" clickable.
 \usepackage{bookmark} %Improves "hyperref" package.
+\usepackage{cleveref}
+
+% ========== Configuración "cleveref" ==========
+\crefname{teorema}{teorema}{teoremas}
+\Crefname{teorema}{Teorema}{Teoremas}
+\crefname{lema}{lema}{lemas}
+\Crefname{lema}{Lema}{Lemas}
+\crefname{proposicion}{proposición}{proposiciones}
+\Crefname{proposicion}{Proposición}{Proposiciones}
+\crefname{corolario}{corolario}{corolarios}
+\Crefname{corolario}{Corolario}{Corolarios}
+\crefname{propiedad}{propiedad}{propiedades}
+\Crefname{propiedad}{Propiedad}{Propiedades}
+\crefname{axioma}{axioma}{axiomas}
+\Crefname{axioma}{Axioma}{Axiomas}
+\crefname{criterio}{criterio}{criterios}
+\Crefname{criterio}{Criterio}{Criterios}
+\crefname{definicion}{definición}{definiciones}
+\Crefname{definicion}{Definición}{Definiciones}
+\crefname{ejemplo}{ejemplo}{ejemplos}
+\Crefname{ejemplo}{Ejemplo}{Ejemplos}
+\crefname{observacion}{observación}{observaciones}
+\Crefname{observacion}{Observación}{Observaciones}
+\crefname{nota}{nota}{notas}
+\Crefname{nota}{Nota}{Notas}
+\crefname{conjetura}{conjetura}{conjeturas}
+\Crefname{conjetura}{Conjetura}{Conjeturas}
+\crefname{problema}{problema}{problemas}
+\Crefname{problema}{Problema}{Problemas}
+\crefname{algorithm}{algoritmo}{algoritmos}
+\Crefname{algorithm}{Algoritmo}{Algoritmos}
+\crefname{listing}{listado}{listados}
+\Crefname{listing}{Listado}{Listados}
+\crefname{equation}{ecuación}{ecuaciones}
+\Crefname{equation}{Ecuación}{Ecuaciones}
+% FIN========== Configuración "cleveref" ==========
 
 
 \begin{document}
@@ -127,27 +205,32 @@
 
 \tableofcontents
 
-\clearpage
-
 
 % Main matter
+\clearpage
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
 \input{main_matter/intro}
 
+\clearpage
 \input{main_matter/cuerpo/cap_1}
 
+\clearpage
 \input{main_matter/cuerpo/cap_2}
 
+\clearpage
 \input{main_matter/conclu}
 
 
 % Back matter
+\clearpage
 \input{back_matter/biblio}
 
+\clearpage
 \input{back_matter/anexos/anexo_1}
 
+\clearpage
 \input{back_matter/anexos/anexo_2}
 
 

@@ -1,20 +1,87 @@
-\chapter*{Introducción}
-\addcontentsline{toc}{chapter}{Introducción}
-Lorem ipsum 
+\section*{Introducción}
+\addcontentsline{toc}{section}{Introducción}
+
+\begin{teorema}[Teorema de Bolzano]\label{thm:bolzano}
+    Contenido del teorema.
+    \begin{equation}\label{eq:pitagoras}
+    a^2 + b^2 = c^2
+    \end{equation}
+\end{teorema}
+
+\begin{proof}
+    Contenido de la demostración.
+\end{proof}
+
+\begin{corolario}
+    Contenido del corolario.
+\end{corolario}
+
+\begin{proof}[Demostración alternativa]
+    Contenido de la demostración.
+\end{proof}
+
+\begin{proposicion}
+    Contenido de la proposición.
+\end{proposicion}
+
+\begin{algorithm}
+  \caption{Euclides para calcular el MCD}\label{alg:euclides} % Título del algoritmo
+  \begin{algorithmic}[1] % Numeración de líneas (opcional)
+    \Require Dos números enteros positivos, \(a\) y \(b\)
+    \Ensure El máximo común divisor de \(a\) y \(b\)
+    \While{\(b \neq 0\)}
+      \State \(r \gets a \mod b\)
+      \State \(a \gets b\)
+      \State \(b \gets r\)
+    \EndWhile
+    \State \Return \(a\)
+  \end{algorithmic}
+\end{algorithm}
 
 Lorem ipsum 
 
 Lorem ipsum 
 
-Lorem ipsum 
+En el \cref{thm:bolzano} se menciona que...
 
 Lorem ipsum 
 
 Lorem ipsum 
 
+En el \cref{alg:euclides} se menciona que...
+
 Lorem ipsum 
 
 Lorem ipsum 
+
+La \cref{eq:pitagoras} es el teorema de Pitágoras.
+
+Lorem ipsum 
+
+\begin{lstlisting}[
+  language=Swift,
+  caption={Función recursiva para calcular el factorial de un número en Swift},
+  label=lst:factorial_swift
+]
+func factorial(_ n: Int) -> Int {
+    if n == 0 {
+        return 1
+    } else {
+        return n * factorial(n - 1)
+    }
+}
+
+// Ejemplo de uso
+let numero = 5
+let resultado = factorial(numero)
+print("El factorial de \(numero) es \(resultado)")
+\end{lstlisting}
+
+
+Lorem ipsum 
+
+En el \cref{lst:factorial_swift} se muestra la implementación recursiva del factorial en Swift.
+
 
 Lorem ipsum 
 
