@@ -97,7 +97,7 @@ En el \cref{lst:hw_py} se muestra la implementación de \textit{Hello, World!} e
 
 Lorem ipsum 
 
-\begin{figure}[h] % [h] indica la posición aproximada (here)
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{front_matter/logo.png}
     \caption{Logotipo de la Universidad de Cádiz.}
@@ -128,7 +128,29 @@ La \cref{tab:tabla_ej} muestra una tabla de ejemplo.
 
 Lorem ipsum 
 
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[
+        node distance=2cm,
+        every node/.style={circle, draw=black,  fill=gray!5, minimum size=0.5cm}
+    ]
+        % Definir nodos
+        \node (A) at (0,0) {A};
+        \node (B) at (2,0) {B};
+        \node (C) at (1,1.5) {C};
+
+        % Dibujar aristas
+        \draw (A) -- (B);
+        \draw (B) -- (C);
+        \draw (C) -- (A);
+    \end{tikzpicture}
+    \caption{Grafo de ejemplo.}
+    \label{fig:grafo}
+\end{figure}
+
 Lorem ipsum 
+
+La \cref{fig:grafo} muestra un grafo de ejemplo.
 
 Lorem ipsum 
 
